@@ -8,7 +8,7 @@
   <meta property="og:description" content="Seven manipulation policies evaluated across twelve tasks on a managed fleet of low-cost SO-101 cells.">
   <meta property="og:image" content="static/images/armnet_header.png">
   <title>ArmnetBench v0.1</title>
-  <link rel="stylesheet" href="static/css/index.css?v=9">
+  <link rel="stylesheet" href="static/css/index.css?v=29">
 </head>
 <body>
   <header class="site-header">
@@ -31,7 +31,7 @@
           ArmnetBench v0.1 is a benchmark for running manipulation policies on a remotely managed fleet of low-cost robot arms.
         </p>
         <div class="actions">
-          <a class="button primary" href="https://huggingface.co/collections/armnet/armnetbench-v01">View the release</a>
+          <a class="button primary" href="https://huggingface.co/collections/armnet/armnetbench-v01" target="_blank" rel="noopener noreferrer">View the release</a>
         </div>
       </div>
       <a class="scroll-link" href="#farm">See how it ran <span aria-hidden="true">↓</span></a>
@@ -46,39 +46,36 @@
       <div class="cells reveal">
         <article class="cell">
           <div class="cell-screen">
-            <span class="live-dot"></span>
-            <span class="arm arm-single"></span>
+            <video muted loop playsinline preload="none" data-src="static/videos/eval_cell1_pi05_tool_insert.mp4" aria-hidden="true"></video>
           </div>
-          <div><strong>cell-1</strong><span>Single-arm</span></div>
+          <div><strong>cell-1</strong><span>Single-arm · π0.5 · tool insert</span></div>
         </article>
         <article class="cell">
           <div class="cell-screen">
-            <span class="live-dot"></span>
-            <span class="arm arm-single"></span>
+            <video muted loop playsinline preload="none" data-src="static/videos/eval_cell3_pi05_cable_unclip.mp4" aria-hidden="true"></video>
           </div>
-          <div><strong>cell-3</strong><span>Single-arm</span></div>
+          <div><strong>cell-3</strong><span>Single-arm · π0.5 · cable unclip</span></div>
         </article>
         <article class="cell">
           <div class="cell-screen">
-            <span class="live-dot"></span>
-            <span class="arm arm-left"></span>
-            <span class="arm arm-right"></span>
+            <video muted loop playsinline preload="none" data-src="static/videos/eval_cell8_pi05_transfer_cube.mp4" aria-hidden="true"></video>
           </div>
-          <div><strong>cell-8</strong><span>Bimanual</span></div>
+          <div><strong>cell-8</strong><span>Bimanual · π0.5 · transfer cube</span></div>
         </article>
       </div>
       <p class="section-note reveal">
         v0.1 ran on two single-arm cells and one bimanual cell, co-located with a
-        shared inference workstation.
+        shared inference workstation. The clips show successful π0.5 rollouts on
+        one task assigned to each cell.
       </p>
     </section>
 
     <section class="section numbers" aria-label="Benchmark scale">
       <div class="metric-grid reveal">
-        <div><strong>7</strong><span>policies</span></div>
-        <div><strong>12</strong><span>tasks</span></div>
-        <div><strong>2,518</strong><span>policy rollouts</span></div>
-        <div><strong>600</strong><span>reference demonstrations</span></div>
+        <div><strong data-count-to="7">7</strong><span>policies</span></div>
+        <div><strong data-count-to="12">12</strong><span>tasks</span></div>
+        <div><strong data-count-to="2518">2,518</strong><span>policy rollouts</span></div>
+        <div><strong data-count-to="600">600</strong><span>reference demonstrations</span></div>
       </div>
     </section>
 
@@ -96,14 +93,38 @@
           <p>8 tasks</p>
         </div>
         <div class="task-grid single">
-          <article class="task"><span>01</span><strong>Block stack</strong></article>
-          <article class="task"><span>02</span><strong>Cable clip</strong></article>
-          <article class="task"><span>03</span><strong>Cable unclip</strong></article>
-          <article class="task"><span>04</span><strong>Eye drops to basket</strong></article>
-          <article class="task"><span>05</span><strong>Eye drops to shelf</strong></article>
-          <article class="task"><span>06</span><strong>Ring insert</strong></article>
-          <article class="task"><span>07</span><strong>Tool insert</strong></article>
-          <article class="task"><span>08</span><strong>Tool removal</strong></article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/block_stack.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>01</span><strong>Block stack</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/cable_clip.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>02</span><strong>Cable clip</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/cable_unclip.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>03</span><strong>Cable unclip</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/eye_drops_to_basket.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>04</span><strong>Eye drops to basket</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/eye_drops_to_shelf.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>05</span><strong>Eye drops to shelf</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/ring_insert.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>06</span><strong>Ring insert</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/tool_insert.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>07</span><strong>Tool insert</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/tool_removal.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>08</span><strong>Tool removal</strong></div>
+          </article>
         </div>
       </div>
 
@@ -114,19 +135,30 @@
           <p>4 tasks</p>
         </div>
         <div class="task-grid bimanual">
-          <article class="task"><span>01</span><strong>Fold tea towel</strong></article>
-          <article class="task"><span>02</span><strong>Insert candle</strong></article>
-          <article class="task"><span>03</span><strong>Open lamp door</strong></article>
-          <article class="task"><span>04</span><strong>Transfer cube</strong></article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/fold_tea_towel.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>01</span><strong>Fold tea towel</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/insert_candle.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>02</span><strong>Insert candle</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/open_lamp_door.mp4?v=2" aria-hidden="true"></video>
+            <div class="task-meta"><span>03</span><strong>Open lamp door</strong></div>
+          </article>
+          <article class="task">
+            <video muted loop playsinline preload="none" data-src="static/videos/transfer_cube.mp4" aria-hidden="true"></video>
+            <div class="task-meta"><span>04</span><strong>Transfer cube</strong></div>
+          </article>
         </div>
       </div>
-      <p class="asset-note reveal">Task videos will replace these labelled panels when the report’s task media is ready.</p>
     </section>
 
     <section class="section protocol">
-      <div class="section-heading reveal">
+      <div class="section-heading protocol-heading reveal">
         <p class="eyebrow">Evaluation protocol</p>
-        <h2>30 rollouts per task–policy pair.</h2>
+        <h2><span class="protocol-count" data-count-to="30">30</span> rollouts per task–policy pair.</h2>
       </div>
       <div class="protocol-summary reveal">
         <p>Each rollout was labelled</p>
@@ -189,7 +221,7 @@
         <p><strong>Cable clipping remained unsolved.</strong><br>Every evaluated policy scored 0%.</p>
       </div>
 
-      <details class="detail-panel reveal">
+      <details class="detail-panel attention reveal">
         <summary>View per-task results</summary>
         <div class="table-scroll">
           <table>
@@ -222,37 +254,45 @@
       <div class="section-heading reveal">
         <p class="eyebrow">Released corpus</p>
         <h2>Every scored rollout<br>is released.</h2>
+        <p>Download the complete evaluation corpus with operator-assigned outcome labels.</p>
       </div>
 
-      <div class="episode-diagram reveal">
-        <div class="camera-stack">
-          <div><span>top</span></div>
-          <div><span>front</span></div>
-          <div><span>wrist</span></div>
+      <div class="corpus-stats reveal" aria-label="Corpus label distribution">
+        <div class="corpus-totals">
+          <div class="corpus-total">
+            <strong><span data-count-to="26">26</span></strong>
+            <span>hours of episodes</span>
+          </div>
+          <div class="corpus-total">
+            <strong><span data-count-to="3">3</span></strong>
+            <span>camera views per episode</span>
+          </div>
+          <div class="corpus-total">
+            <strong><span data-count-to="3118">3,118</span></strong>
+            <span>labelled episodes</span>
+          </div>
         </div>
-        <div class="episode-stream">
-          <span>video</span>
-          <span>state</span>
-          <span>action</span>
-          <span>task</span>
-        </div>
-        <div class="episode-label">
-          <span>quality label</span>
-          <div class="outcome-list">
-            <strong class="success">successful</strong>
-            <strong class="suboptimal">suboptimal</strong>
-            <strong class="failure">failure</strong>
+        <div class="label-distribution">
+          <div class="label-bar" role="img" aria-label="1,290 successful, 89 suboptimal, and 1,739 failed episodes">
+            <span class="success" style="--count:1290"></span>
+            <span class="suboptimal" style="--count:89"></span>
+            <span class="failure" style="--count:1739"></span>
+          </div>
+          <div class="label-counts">
+            <span><i class="success"></i><strong data-count-to="1290">1,290</strong> successful</span>
+            <span><i class="suboptimal"></i><strong data-count-to="89">89</strong> suboptimal</span>
+            <span><i class="failure"></i><strong data-count-to="1739">1,739</strong> failed</span>
           </div>
         </div>
       </div>
 
       <div class="format-links reveal">
-        <a href="https://huggingface.co/collections/armnet/armnetbench-v01">
+        <a href="https://huggingface.co/collections/armnet/armnetbench-v01" target="_blank" rel="noopener noreferrer">
           <span>Native release</span>
           <strong>LeRobot v3.0</strong>
           <i aria-hidden="true">↗</i>
         </a>
-        <a href="https://huggingface.co/datasets/villekuosmanen/armnetbench_robometer_v01">
+        <a href="https://huggingface.co/datasets/villekuosmanen/armnetbench_robometer_v01" target="_blank" rel="noopener noreferrer">
           <span>Reward-model export</span>
           <strong>RoboMeter</strong>
           <i aria-hidden="true">↗</i>
@@ -265,7 +305,7 @@
         <p class="eyebrow">Limitations and next steps</p>
         <h2>Priorities for the next release.</h2>
       </div>
-      <details class="detail-panel reveal">
+      <details class="detail-panel attention reveal">
         <summary>View limitations and planned improvements</summary>
         <ul>
           <li><strong>Cell comparison.</strong> Each task ran on one cell. Future releases will repeat selected evaluations across cells.</li>
@@ -281,14 +321,20 @@
   <footer>
     <div>
       <strong>ArmnetBench v0.1</strong>
-      <span>Praveen Selvaraj · Lorenzo Uttini · Ville Kuosmanen</span>
+      <span class="author-links">
+        <a href="https://www.linkedin.com/in/pravsels/" target="_blank" rel="noopener noreferrer">Praveen Selvaraj</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/in/lorenzo-uttini/" target="_blank" rel="noopener noreferrer">Lorenzo Uttini</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/in/ville-kuosmanen-891889154/" target="_blank" rel="noopener noreferrer">Ville Kuosmanen</a>
+      </span>
     </div>
     <div class="footer-links">
-      <a href="https://huggingface.co/collections/armnet/armnetbench-v01">Release</a>
-      <a href="https://armnet.dev">Armnet</a>
+      <a href="https://huggingface.co/collections/armnet/armnetbench-v01" target="_blank" rel="noopener noreferrer">Release</a>
+      <a href="https://armnet.dev" target="_blank" rel="noopener noreferrer">Armnet</a>
     </div>
   </footer>
 
-  <script src="static/js/index.js?v=9"></script>
+  <script src="static/js/index.js?v=20"></script>
 </body>
 </html>
