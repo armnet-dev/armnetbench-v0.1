@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ArmnetBench: real-world evaluation of manipulation policies on a low-cost arm farm.">
+  <meta property="og:title" content="ArmnetBench">
+  <meta property="og:description" content="Seven manipulation policies evaluated across twelve tasks on a managed fleet of low-cost SO-101 cells.">
+  <meta property="og:image" content="static/images/armnet_header.png">
+  <title>ArmnetBench</title>
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top">ArmnetBench</a>
+    <nav aria-label="Primary navigation">
+      <a href="#farm">Farm</a>
+      <a href="#tasks">Tasks</a>
+      <a href="#results">Results</a>
+      <a href="#data">Data</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">ArmnetBench v0.1</p>
+        <h1>Real-world evaluation on a low-cost arm farm.</h1>
+        <p class="hero-summary">
+          ArmnetBench is a benchmark for running manipulation policies on a remotely managed fleet of low-cost robot arms.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="https://huggingface.co/collections/armnet/armnetbench-v01">View the release</a>
+        </div>
+      </div>
+      <a class="scroll-link" href="#farm">See how it ran <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="section farm" id="farm">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The Armnet arm farm</p>
+        <h2>A policy is submitted once.<br>The farm runs it on real hardware.</h2>
+      </div>
+
+      <div class="run-flow reveal" aria-label="Evaluation workflow">
+        <div class="flow-step">
+          <span class="step-number">01</span>
+          <strong>Submit</strong>
+          <span>Policy image, task and embodiment</span>
+        </div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-step">
+          <span class="step-number">02</span>
+          <strong>Dispatch</strong>
+          <span>Isolated container on the local workstation</span>
+        </div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-step">
+          <span class="step-number">03</span>
+          <strong>Run</strong>
+          <span>Commands stream to a matching physical cell</span>
+        </div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-step">
+          <span class="step-number">04</span>
+          <strong>Score</strong>
+          <span>Operator resets, monitors and labels the rollout</span>
+        </div>
+      </div>
+
+      <div class="cells reveal">
+        <article class="cell">
+          <div class="cell-screen">
+            <span class="live-dot"></span>
+            <span class="arm arm-single"></span>
+          </div>
+          <div><strong>cell-1</strong><span>Single-arm</span></div>
+        </article>
+        <article class="cell">
+          <div class="cell-screen">
+            <span class="live-dot"></span>
+            <span class="arm arm-single"></span>
+          </div>
+          <div><strong>cell-3</strong><span>Single-arm</span></div>
+        </article>
+        <article class="cell">
+          <div class="cell-screen">
+            <span class="live-dot"></span>
+            <span class="arm arm-left"></span>
+            <span class="arm arm-right"></span>
+          </div>
+          <div><strong>cell-8</strong><span>Bimanual</span></div>
+        </article>
+      </div>
+      <p class="section-note reveal">
+        v0.1 ran on two single-arm cells and one bimanual cell, co-located with a
+        shared inference workstation.
+      </p>
+    </section>
+
+    <section class="section numbers dark" aria-label="Benchmark scale">
+      <div class="metric-grid reveal">
+        <div><strong>7</strong><span>policies</span></div>
+        <div><strong>12</strong><span>tasks</span></div>
+        <div><strong>2,518</strong><span>policy rollouts</span></div>
+        <div><strong>600</strong><span>reference demonstrations</span></div>
+      </div>
+    </section>
+
+    <section class="section task-suite" id="tasks">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Task suite</p>
+        <h2>Eight single-arm tasks.<br>Four bimanual tasks.</h2>
+        <p>Every policy was trained or fine-tuned on the same 50 demonstrations per task.</p>
+      </div>
+
+      <div class="task-chapter reveal">
+        <div class="chapter-label">
+          <span>01</span>
+          <h3>Single-arm</h3>
+          <p>8 tasks</p>
+        </div>
+        <div class="task-grid single">
+          <article class="task"><span>01</span><strong>Block stack</strong></article>
+          <article class="task"><span>02</span><strong>Cable clip</strong></article>
+          <article class="task"><span>03</span><strong>Cable unclip</strong></article>
+          <article class="task"><span>04</span><strong>Eye drops to basket</strong></article>
+          <article class="task"><span>05</span><strong>Eye drops to shelf</strong></article>
+          <article class="task"><span>06</span><strong>Ring insert</strong></article>
+          <article class="task"><span>07</span><strong>Tool insert</strong></article>
+          <article class="task"><span>08</span><strong>Tool removal</strong></article>
+        </div>
+      </div>
+
+      <div class="task-chapter reveal">
+        <div class="chapter-label">
+          <span>02</span>
+          <h3>Bimanual</h3>
+          <p>4 tasks</p>
+        </div>
+        <div class="task-grid bimanual">
+          <article class="task"><span>01</span><strong>Fold tea towel</strong></article>
+          <article class="task"><span>02</span><strong>Insert candle</strong></article>
+          <article class="task"><span>03</span><strong>Open lamp door</strong></article>
+          <article class="task"><span>04</span><strong>Transfer cube</strong></article>
+        </div>
+      </div>
+      <p class="asset-note reveal">Task videos will replace these labelled panels when the report’s task media is ready.</p>
+    </section>
+
+    <section class="section protocol dark">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Evaluation protocol</p>
+        <h2>One shared budget.<br>One protocol.</h2>
+      </div>
+      <div class="protocol-strip reveal">
+        <div><strong>50</strong><span>demonstrations<br>per task</span></div>
+        <div class="operator">×</div>
+        <div><strong>30</strong><span>rollouts per<br>task–policy pair</span></div>
+        <div class="operator">→</div>
+        <div class="labels">
+          <span class="success">successful</span>
+          <span class="suboptimal">suboptimal</span>
+          <span class="failure">failure</span>
+        </div>
+      </div>
+      <p class="dark-note reveal">
+        An operator resets the scene, monitors the rollout and assigns one of three
+        quality labels. Two malformed resets were removed during data cleaning.
+      </p>
+    </section>
+
+    <section class="section results" id="results">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Leaderboard</p>
+        <h2>Results under a shared 50-demo budget.</h2>
+        <p>The leaderboard demonstrates the arm farm and is not a capability ceiling for any policy.</p>
+      </div>
+
+      <div class="bar-chart reveal" role="img" aria-label="Policy strict success rates">
+        <div class="bar-row leader">
+          <span class="policy">π<sub>0.5</sub></span>
+          <div class="track"><span style="--value:47.6%"></span></div>
+          <strong>47.6%</strong>
+        </div>
+        <div class="bar-row">
+          <span class="policy">π<sub>0</sub></span>
+          <div class="track"><span style="--value:35.1%"></span></div>
+          <strong>35.1%</strong>
+        </div>
+        <div class="bar-row">
+          <span class="policy">GR00T N1.7</span>
+          <div class="track"><span style="--value:29.4%"></span></div>
+          <strong>29.4%</strong>
+        </div>
+        <div class="bar-row">
+          <span class="policy">Diffusion</span>
+          <div class="track"><span style="--value:26.7%"></span></div>
+          <strong>26.7%</strong>
+        </div>
+        <div class="bar-row">
+          <span class="policy">ACT</span>
+          <div class="track"><span style="--value:19.2%"></span></div>
+          <strong>19.2%</strong>
+        </div>
+        <div class="bar-row">
+          <span class="policy">MolmoAct 2</span>
+          <div class="track"><span style="--value:18.9%"></span></div>
+          <strong>18.9%</strong>
+        </div>
+        <div class="bar-row">
+          <span class="policy">SmolVLA</span>
+          <div class="track"><span style="--value:15%"></span></div>
+          <strong>15.0%</strong>
+        </div>
+      </div>
+
+      <div class="result-callouts reveal">
+        <p><strong>π<sub>0.5</sub> led both embodiments.</strong><br>45.4% single-arm and 52.1% bimanual.</p>
+        <p><strong>Rankings changed by embodiment.</strong><br>Diffusion rose to second on bimanual tasks.</p>
+        <p><strong>Cable clipping remained unsolved.</strong><br>Every evaluated policy scored 0%.</p>
+      </div>
+
+      <details class="detail-panel reveal">
+        <summary>View per-task results</summary>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Task</th><th>ACT</th><th>Diff.</th><th>SmolVLA</th><th>π<sub>0</sub></th><th>π<sub>0.5</sub></th><th>GR00T</th><th>MolmoAct 2</th></tr>
+            </thead>
+            <tbody>
+              <tr class="table-group"><td colspan="8">Single-arm</td></tr>
+              <tr><td>block_stack</td><td>0</td><td>0</td><td>7</td><td>33</td><td><b>43</b></td><td>27</td><td>7</td></tr>
+              <tr><td>ring_insert</td><td>50</td><td>23</td><td>33</td><td>17</td><td>47</td><td><b>60</b></td><td>13</td></tr>
+              <tr><td>tool_insert</td><td>20</td><td>23</td><td>7</td><td>40</td><td><b>53</b></td><td>17</td><td>3</td></tr>
+              <tr><td>tool_removal</td><td>27</td><td><b>63</b></td><td>3</td><td>10</td><td>13</td><td>30</td><td>0</td></tr>
+              <tr><td>cable_clip</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+              <tr><td>cable_unclip</td><td>60</td><td>7</td><td>37</td><td>47</td><td><b>70</b></td><td>33</td><td>23</td></tr>
+              <tr><td>eye_drops_to_basket</td><td>63</td><td>43</td><td>23</td><td><b>70</b></td><td>67</td><td>67</td><td>63</td></tr>
+              <tr><td>eye_drops_to_shelf</td><td>0</td><td>17</td><td>10</td><td><b>76</b></td><td>70</td><td>43</td><td>47</td></tr>
+              <tr class="table-group"><td colspan="8">Bimanual</td></tr>
+              <tr><td>fold_tea_towel</td><td>10</td><td>50</td><td>17</td><td>50</td><td><b>70</b></td><td>13</td><td>20</td></tr>
+              <tr><td>insert_candle</td><td>0</td><td>7</td><td>7</td><td>27</td><td><b>30</b></td><td>3</td><td>3</td></tr>
+              <tr><td>open_lamp_door</td><td>0</td><td><b>73</b></td><td>30</td><td>7</td><td>23</td><td>13</td><td>33</td></tr>
+              <tr><td>transfer_cube</td><td>0</td><td>13</td><td>7</td><td>47</td><td><b>86</b></td><td>47</td><td>13</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <section class="section data dark" id="data">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Released corpus</p>
+        <h2>Every scored rollout<br>is released.</h2>
+      </div>
+
+      <div class="episode-diagram reveal">
+        <div class="camera-stack">
+          <div><span>top</span></div>
+          <div><span>front</span></div>
+          <div><span>wrist</span></div>
+        </div>
+        <div class="episode-stream">
+          <span>video</span>
+          <span>state</span>
+          <span>action</span>
+          <span>task</span>
+        </div>
+        <div class="episode-label">
+          <span>quality label</span>
+          <strong>successful</strong>
+        </div>
+      </div>
+
+      <div class="format-links reveal">
+        <a href="https://huggingface.co/collections/armnet/armnetbench-v01">
+          <span>Native release</span>
+          <strong>LeRobot v3.0</strong>
+          <i aria-hidden="true">↗</i>
+        </a>
+        <a href="https://huggingface.co/datasets/villekuosmanen/armnetbench_robometer_v01">
+          <span>Reward-model export</span>
+          <strong>RoboMeter</strong>
+          <i aria-hidden="true">↗</i>
+        </a>
+      </div>
+    </section>
+
+    <section class="section reading">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Read the results carefully</p>
+        <h2>v0.1 validated the system.<br>It did not remove every confound.</h2>
+      </div>
+      <details class="detail-panel reveal">
+        <summary>Limitations reported in the paper</summary>
+        <ul>
+          <li>Each task ran on one physical cell, so cross-cell agreement was not measured.</li>
+          <li>Object placement drifted across evaluation days and two failed resets were removed.</li>
+          <li>Task objects deteriorated during evaluation.</li>
+          <li>One front camera was misaligned and one bimanual wrist camera was slightly blurry.</li>
+          <li>Lighting was ambient rather than calibrated across cells.</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>ArmnetBench v0.1</strong>
+      <span>Praveen Selvaraj · Lorenzo Uttini · Ville Kuosmanen</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://huggingface.co/collections/armnet/armnetbench-v01">Release</a>
+      <a href="https://armnet.dev">Armnet</a>
+    </div>
+  </footer>
+
+  <script src="static/js/index.js"></script>
+</body>
+</html>
