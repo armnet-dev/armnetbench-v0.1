@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ArmnetBench v0.1: real-world evaluation of manipulation policies on a low-cost arm farm.">
+  <meta name="description" content="ArmnetBench v0.1: parallel real-world evaluation of manipulation policies on a low-cost arm farm.">
   <meta property="og:title" content="ArmnetBench v0.1">
   <meta property="og:description" content="Seven manipulation policies evaluated across twelve tasks on a managed fleet of low-cost SO-101 cells.">
   <meta property="og:image" content="static/images/armnet_header.png">
   <title>ArmnetBench v0.1</title>
-  <link rel="stylesheet" href="static/css/index.css?v=29">
+  <link rel="stylesheet" href="static/css/index.css?v=30">
 </head>
 <body>
   <header class="site-header">
-    <a class="wordmark" href="#top">ArmnetBench v0.1</a>
+    <a class="wordmark" href="#top">ArmnetBench</a>
     <nav aria-label="Primary navigation">
       <a href="#farm">Farm</a>
       <a href="#tasks">Tasks</a>
@@ -25,11 +25,15 @@
     <section class="hero">
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-copy reveal">
-        <p class="eyebrow">ArmnetBench v0.1</p>
-        <h1>Real-world evaluation on a low-cost arm farm.</h1>
-        <p class="hero-summary">
-          ArmnetBench v0.1 is a benchmark for running manipulation policies on a remotely managed fleet of low-cost robot arms.
+        <h1>ArmnetBench v0.1: Parallel Real-World Evaluation of Manipulation Policies on a Low-Cost Arm Farm</h1>
+        <p class="hero-authors">
+          <a href="https://www.linkedin.com/in/pravsels/" target="_blank" rel="noopener noreferrer">Praveen Selvaraj</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/lorenzo-uttini/" target="_blank" rel="noopener noreferrer">Lorenzo Uttini</a>
+          <span>·</span>
+          <a href="https://www.linkedin.com/in/ville-kuosmanen-891889154/" target="_blank" rel="noopener noreferrer">Ville Kuosmanen</a>
         </p>
+        <p class="hero-affiliation"><a href="https://armnet.dev" target="_blank" rel="noopener noreferrer">Armnet</a></p>
         <div class="actions">
           <a class="button primary" href="https://huggingface.co/collections/armnet/armnetbench-v01" target="_blank" rel="noopener noreferrer">View the release</a>
         </div>
@@ -308,11 +312,11 @@
       <details class="detail-panel attention reveal">
         <summary>View limitations and planned improvements</summary>
         <ul>
-          <li><strong>Cell comparison.</strong> Each task ran on one cell. Future releases will repeat selected evaluations across cells.</li>
-          <li><strong>Initial states.</strong> Object placements were not recorded. Future runs will plot starting positions by rollout label to show where policies succeed and fail.</li>
-          <li><strong>Lighting.</strong> The cells relied on ambient office lighting. Controlled lightboxes are planned.</li>
-          <li><strong>Scoring.</strong> Operators assigned the quality labels. The released corpus can train an automatic labeller.</li>
-          <li><strong>Coverage.</strong> Future releases will add harder, longer-horizon tasks that demand richer physical interaction and memory.</li>
+          <li><strong>Automation and operator effort.</strong> Scene resets are still manual. Automating them would make initial states more repeatable and allow one operator to supervise more cells.</li>
+          <li><strong>Initial states.</strong> Operators randomised object placement but did not record the resulting positions. Future runs should log them to verify resets and measure sensitivity to starting conditions.</li>
+          <li><strong>Lighting.</strong> The cells used uncalibrated ambient office light. Per-cell lightboxes would make illumination more consistent.</li>
+          <li><strong>Scoring.</strong> On-site operators assigned every rollout label. The released corpus provides training data for an automatic labeller.</li>
+          <li><strong>Coverage.</strong> The task suite should expand to include harder, longer-horizon interactions and tasks that require memory.</li>
         </ul>
       </details>
     </section>
