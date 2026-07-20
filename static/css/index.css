@@ -625,6 +625,12 @@ th { color: var(--muted); font-weight: 600; }
   font-size: 13px;
 }
 .label-distribution { min-width: 0; }
+.label-scope {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
 .label-bar {
   height: 16px;
   display: flex;

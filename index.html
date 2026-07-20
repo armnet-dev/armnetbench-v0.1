@@ -8,7 +8,7 @@
   <meta property="og:description" content="Seven manipulation policies evaluated across twelve tasks on a managed fleet of low-cost SO-101 cells.">
   <meta property="og:image" content="static/images/armnet_header.png">
   <title>ArmnetBench v0.1</title>
-  <link rel="stylesheet" href="static/css/index.css?v=31">
+  <link rel="stylesheet" href="static/css/index.css?v=32">
 </head>
 <body>
   <header class="site-header">
@@ -79,7 +79,7 @@
       <div class="metric-grid reveal">
         <div><strong data-count-to="7">7</strong><span>policies</span></div>
         <div><strong data-count-to="12">12</strong><span>tasks</span></div>
-        <div><strong data-count-to="2518">2,518</strong><span>policy rollouts</span></div>
+        <div><strong data-count-to="2518">2,518</strong><span>core benchmark rollouts</span></div>
         <div><strong data-count-to="600">600</strong><span>reference demonstrations</span></div>
       </div>
     </section>
@@ -258,27 +258,28 @@
     <section class="section data" id="data">
       <div class="section-heading reveal">
         <p class="eyebrow">Released corpus</p>
-        <h2>Every scored rollout<br>is released.</h2>
-        <p>Download the complete evaluation corpus with operator-assigned outcome labels.</p>
+        <h2>Every scored benchmark rollout<br>is released.</h2>
+        <p>The main benchmark and leaderboard use 3,118 core episodes. The full RoboMeter release also includes 600 labelled episodes from extra runs.</p>
       </div>
 
-      <div class="corpus-stats reveal" aria-label="Corpus label distribution">
+      <div class="corpus-stats reveal" aria-label="Released corpus statistics">
         <div class="corpus-totals">
           <div class="corpus-total">
             <strong><span data-count-to="26">26</span></strong>
-            <span>hours of episodes</span>
+            <span>hours in full release</span>
           </div>
           <div class="corpus-total">
             <strong><span data-count-to="3">3</span></strong>
             <span>camera views per episode</span>
           </div>
           <div class="corpus-total">
-            <strong><span data-count-to="3118">3,118</span></strong>
-            <span>labelled episodes</span>
+            <strong><span data-count-to="3718">3,718</span></strong>
+            <span>released episodes</span>
           </div>
         </div>
         <div class="label-distribution">
-          <div class="label-bar" role="img" aria-label="1,290 successful, 89 suboptimal, and 1,739 failed episodes">
+          <p class="label-scope">Core benchmark labels · 3,118 episodes</p>
+          <div class="label-bar" role="img" aria-label="Core benchmark: 1,290 successful, 89 suboptimal, and 1,739 failed episodes">
             <span class="success" style="--count:1290"></span>
             <span class="suboptimal" style="--count:89"></span>
             <span class="failure" style="--count:1739"></span>
@@ -297,7 +298,7 @@
           <strong>LeRobot v3.0</strong>
           <i aria-hidden="true">↗</i>
         </a>
-        <a href="https://huggingface.co/datasets/villekuosmanen/armnetbench_robometer_v01" target="_blank" rel="noopener noreferrer">
+        <a href="https://huggingface.co/datasets/armnet/armnetbench_v01_robometer" target="_blank" rel="noopener noreferrer">
           <span>Reward-model export</span>
           <strong>RoboMeter</strong>
           <i aria-hidden="true">↗</i>
@@ -316,7 +317,7 @@
           <li><strong>Automation and operator effort.</strong> Scene resets are still manual. Automating them would make initial states more repeatable and allow one operator to supervise more cells.</li>
           <li><strong>Initial states.</strong> Operators randomised object placement but did not record the resulting positions. Future runs should log them to verify resets and measure sensitivity to starting conditions.</li>
           <li><strong>Lighting.</strong> The cells used uncalibrated ambient office light. Per-cell lightboxes would make illumination more consistent.</li>
-          <li><strong>Scoring.</strong> On-site operators assigned every rollout label. The released corpus provides training data for an automatic labeller.</li>
+          <li><strong>Scoring.</strong> On-site operators assigned every rollout label. Automatic scoring would reduce this manual workload.</li>
           <li><strong>Coverage.</strong> The task suite should expand to include harder, longer-horizon interactions and tasks that require memory.</li>
         </ul>
       </details>
