@@ -293,12 +293,8 @@ a { color: inherit; }
   padding: 64px 0;
   border-top: 1px solid var(--line);
 }
-.chapter-label > span {
-  color: var(--muted);
-  font-size: 12px;
-}
 .chapter-label h3 {
-  margin: 18px 0 0;
+  margin: 0;
   font-size: 28px;
   letter-spacing: -0.03em;
 }
